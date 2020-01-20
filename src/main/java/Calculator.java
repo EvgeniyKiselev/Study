@@ -1,10 +1,14 @@
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+/**
+ * Реализовать базовые операции калькулятора (+,-,/,*) для предыдущего задания
+ */
+
 public class Calculator {
     static Scanner scanInput = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main() {
         System.out.println("Результат операции: " + calculate(getFloat(), getFloat(), getOperation()));
     }
 
