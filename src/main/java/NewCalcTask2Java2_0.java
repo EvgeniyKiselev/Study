@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  *
  * @param inputString введенное дробное число для операции
  * @param operation   параметр ввода операции (+,-,/,*)
- * @see #calculate(float, float, char) 
+ * @see #calculate(float, float, char)
  * @author Евгений Киселев
  * @return result - возвращает результат выбранного действия с 2-мя введенными числами
  */
