@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -10,7 +11,7 @@ public class ChooseBetweenCalcOrArrayMaxElement {
         chooseClass();
     }
 
-    private static void chooseClass() {
+    private static void chooseClass() throws InputMismatchException {
         System.out.println("Введите 1 или 2 (1 - Калькулятор, 2 - Поиск в максимального элемента в массиве): ");
         int chooseYourClass = new Scanner(System.in).nextInt();
         switch (chooseYourClass) {
