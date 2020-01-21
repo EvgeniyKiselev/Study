@@ -5,9 +5,10 @@ import java.util.regex.Pattern;
  * NewCalcTask2Java2_0 запрашивает 2 дробных числа на ввод, суммирует их, далее (* - по задаче) предлагает выбрать другую операцию.
  * для выбора другой операции нужно ввести 2 дробных числа.
  *
- * @author Евгений Киселев
  * @param inputString введенное дробное число для операции
- * @param operation параметр ввода операции (+,-,/,*)
+ * @param operation   параметр ввода операции (+,-,/,*)
+ * @see #calculate(float, float, char)
+ * @author Евгений Киселев
  * @return result - возвращает результат выбранного действия с 2-мя введенными числами
  */
 
@@ -29,8 +30,7 @@ public class NewCalcTask2Java2_0 {
                 inputString = inputString.replace(",", ".");
             }
             return Float.parseFloat(inputString);
-        }
-        else {
+        } else {
             System.out.println("Число не распознано! ");
             return getFloat();
         }
@@ -39,7 +39,7 @@ public class NewCalcTask2Java2_0 {
     private static char getOperation() {
         System.out.println("Введите операцию (+,-,/,*): ");
         char operation;
-        if(scanInput.hasNext()) {
+        if (scanInput.hasNext()) {
             operation = scanInput.next().charAt(0);
         } else {
             System.out.println("Ошибка! Введите операцию еще раз: ");
