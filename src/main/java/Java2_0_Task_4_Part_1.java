@@ -8,28 +8,74 @@ public class Java2_0_Task_4_Part_1 {
             intArray[i] = ((int) (Math.random() * 40) - 20);
         }
 
-        String intArrayString = Arrays.toString(intArray);
-        System.out.println(intArrayString);
-        System.out.println("Максимальный элемент массива: " + getMaxElement(intArray));
-        System.out.println("Минимальный элемент массива: " + getMinElement(intArray));
+        System.out.println(Arrays.toString(intArray));
+        System.out.println("Минимальный положительный элемент массива: " + getMinP(intArray));
+        System.out.println("Максимальный отрицательный элемент массива: " + getMaxO(intArray));
+        int temp = intArray[getIndexMinP(intArray)];
+        intArray[getIndexMinP(intArray)] = intArray[getIndexMaxO(intArray)];
+        intArray[getIndexMaxO(intArray)] = temp;
+        System.out.println(Arrays.toString(intArray));
     }
 
-    private static int getMaxElement(int[] intArray) {
-        int max = intArray[0];
-        int i;
-        for (i = 1; i < intArray.length; i++) {
-            max = Math.max(max, intArray[i]);
+    private static int getMinP(int[] intArray) {
+        int check = -1;
+        for (int i = 0; i < intArray.length; i++) {
+            if (intArray[i] > 0) {
+                if (check < 0) {
+                    check = intArray[i];
+                } else if (intArray[i] < check) {
+                    check = intArray[i];
+                }
+            }
         }
-        return max;
+        return check;
     }
 
-    private static int getMinElement(int[] intArray) {
-        int min = intArray[0];
-        int i;
-        for (i = 1; i < intArray.length; i++) {
-            min = Math.min(min, intArray[i]);
+    private static int getIndexMinP(int[] intArray) {
+        int check = -1;
+        int index = 0;
+        for (int i = 0; i < intArray.length; i++) {
+            if (intArray[i] > 0) {
+                if (check < 0) {
+                    check = intArray[i];
+                    index = i;
+                } else if (intArray[i] < check) {
+                    check = intArray[i];
+                    index = i;
+                }
+            }
         }
-        return min;
+        return index;
     }
 
+    private static int getMaxO(int[] intArray) {
+        int check = 1;
+        for (int i = 0; i < intArray.length; i++) {
+            if (intArray[i] < 0) {
+                if (check > 0) {
+                    check = intArray[i];
+                } else if (intArray[i] > check) {
+                    check = intArray[i];
+                }
+            }
+        }
+        return check;
+    }
+
+    private static int getIndexMaxO(int[] intArray) {
+        int check = 1;
+        int index = 0;
+        for (int i = 0; i < intArray.length; i++) {
+            if (intArray[i] < 0) {
+                if (check > 0) {
+                    check = intArray[i];
+                    index = i;
+                } else if (intArray[i] > check) {
+                    check = intArray[i];
+                    index = i;
+                }
+            }
+        }
+        return index;
+    }
 }
