@@ -51,7 +51,7 @@ public class InputValues {
 
     public char getOperation(Scanner scanInput) {
         System.out.println("Введите операцию (+,-,/,*): ");
-        char operation;
+        char operation = '\0';
         if(scanInput.hasNext()) {
             operation = scanInput.next().charAt(0);
             if (!(operation == '+' | operation == '-' | operation == '*' | operation == '/')) {
