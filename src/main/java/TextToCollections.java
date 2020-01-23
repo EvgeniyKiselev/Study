@@ -8,7 +8,7 @@ public class TextToCollections {
 
     public static void main(String[] args) throws IOException {
         ArrayList<String> list = new ArrayList<>();
-        BufferedReader read = new BufferedReader(new FileReader("C://Users//EKiselev//IdeaProjects//Study//src//main//java//textToWrite.txt"));
+        BufferedReader read = new BufferedReader(new FileReader("textToWrite.txt"));
         String line;
         while ((line = read.readLine()) != null) {
             list.addAll(Arrays.asList(line.split(" ")));
@@ -17,10 +17,10 @@ public class TextToCollections {
 
         System.out.println("Исходный массив:\n" + list);
         Collections.sort(list);
-        System.out.println("Массив, отсортированный по алфавиту:\n" + list + "\n" + "Повторяющиеся слова: ");
+        System.out.println("Массив, отсортированный по алфавиту:\n" + list + "\nПовторяющиеся слова: ");
 
         int maxCount = 0;
-        String maxKey = "";
+        String maxKey = null;
         Map<String, Integer> map = countWords(list);
         for (Map.Entry<String, Integer> pair : map.entrySet()) {
             System.out.println(pair.getKey() + " " + pair.getValue());
@@ -30,10 +30,10 @@ public class TextToCollections {
             }
         }
 
-        System.out.println("Слово с максимальным количеством повторений:\n" + "\"" + maxKey + "\"" + " " + maxCount);
+        System.out.println("Слово с максимальным количеством повторений:\n\"" + maxKey + "\" " + maxCount);
     }
 
-    public static Map<String, Integer> countWords(ArrayList<String> list) {
+    private static Map<String, Integer> countWords(ArrayList<String> list) {
         HashMap<String, Integer> result = new HashMap<String, Integer>();
 
         for (String s : list) {
