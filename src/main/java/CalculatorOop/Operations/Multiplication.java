@@ -1,7 +1,7 @@
 package CalculatorOop.Operations;
 
 public class Multiplication {
-    public float multiplicate(float firstNum, float secondNum){
+    public double multiplicate(double firstNum, double secondNum) {
         return firstNum * secondNum;
     }
 }
