@@ -1,7 +1,7 @@
 package CalculatorOop.Operations;
 
 public class Subtraction {
-    public float sub(float firstNum, float secondNum){
+    public double sub(double firstNum, double secondNum) {
         return firstNum - secondNum;
     }
 }

@@ -1,7 +1,7 @@
 package CalculatorOop.Operations;
 
 public class Division {
-    public float div(float firstNum, float secondNum){
+    public double div(double firstNum, double secondNum) {
         return firstNum / secondNum;
     }
 }

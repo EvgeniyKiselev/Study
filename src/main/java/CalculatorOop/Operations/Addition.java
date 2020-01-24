@@ -1,7 +1,7 @@
 package CalculatorOop.Operations;
 
 public class Addition {
-    public float sum(float firstNum, float secondNum){
+    public double sum(double firstNum, double secondNum) {
         return firstNum + secondNum;
     }
 }

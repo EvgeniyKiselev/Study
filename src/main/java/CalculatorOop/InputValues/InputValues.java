@@ -5,8 +5,8 @@ import java.util.regex.Pattern;
 
 public class InputValues {
 
-    private float firstValue;
-    private float secondValue;
+    private double firstValue;
+    private double secondValue;
     private char operation;
 
     public char getOperation() {
@@ -17,25 +17,28 @@ public class InputValues {
         this.operation = operation;
     }
 
-    public InputValues() {
-        Scanner scanInput = new Scanner(System.in);
-        this.firstValue = getFloat(scanInput);
-        this.secondValue = getFloat(scanInput);
-        this.operation = getOperation(scanInput);
-        scanInput.close();
+    public InputValues(String firstValue, String secondValue, char operation) {
+        this.firstValue = checkFloat(firstValue);
+        this.secondValue = checkFloat(secondValue);
+        this.operation = operation;
     }
 
-    public float getFirstValue() {
+    public double getFirstValue() {
         return firstValue;
     }
 
-    public float getSecondValue() {
+    public double getSecondValue() {
         return secondValue;
     }
 
-    private static float getFloat(Scanner scanInput) {
+    private static double getFloat(double inputString) {
         System.out.println("Введите число:");
-        String inputString = scanInput.nextLine();
+        double result = checkFloat("18.55");
+        return result;
+    }
+
+    private static double checkFloat(String inputString) {
+        inputString = inputString;
 
         if (Pattern.compile("^([+-]?\\d+[.,]?\\d*)$").matcher(inputString).matches()) {
             if (inputString.contains(",")) {
@@ -45,10 +48,9 @@ public class InputValues {
         }
         else {
             System.out.println("Число не распознано! ");
-            return getFloat(scanInput);
+            return checkFloat(inputString);
         }
     }
-
     public char getOperation(Scanner scanInput) {
         System.out.println("Введите операцию (+,-,/,*): ");
         char operation = '\0';
