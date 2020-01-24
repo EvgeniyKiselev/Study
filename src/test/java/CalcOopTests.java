@@ -11,13 +11,13 @@ public class CalcOopTests {
 
     @Test
     public void typeOfValueTest() {
-        InputValues inputValues = new InputValues("18,55","9", '/');
+        InputValues inputValues = new InputValues("18,55", "9", '/');
         Assert.assertEquals("Ожидаемый результат не совпал с фактическим",18.55, inputValues.getFirstValue(),0.1);
     }
 
     @Test
     public void typeOfResult() {
-        InputValues inputValues = new InputValues("18,55","9", '+');
+        InputValues inputValues = new InputValues("18,55", "9", '+');
         Assert.assertNotNull(inputValues);
         Assert.assertNotNull(inputValues.getFirstValue());
         Assert.assertNotNull(inputValues.getSecondValue());
@@ -26,14 +26,14 @@ public class CalcOopTests {
 
     @Test
     public void additionTest() {
-        InputValues inputValues = new InputValues("18.5","9", '+');
+        InputValues inputValues = new InputValues("18.5", "9", '+');
         double result = new Addition().sum(inputValues.getFirstValue(), inputValues.getSecondValue());
-        Assert.assertEquals("Ожидаемый результат не совпал с фактическим", 27.5, result, 0.);
+        Assert.assertEquals("Ожидаемый результат не совпал с фактическим", 27.5, result, 1.87e-5);
     }
 
     @Test
     public void substractionTest() {
-        InputValues inputValues = new InputValues("18","9.9", '-');
+        InputValues inputValues = new InputValues("18", "9.9", '-');
         double result = new Subtraction().sub(inputValues.getFirstValue(), inputValues.getSecondValue());
         Assert.assertEquals("Ожидаемый результат не совпал с фактическим", 8.1000, result, 0.1);
     }

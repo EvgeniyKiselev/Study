@@ -23,6 +23,14 @@ public class InputValues {
         this.operation = operation;
     }
 
+    public InputValues() {
+        Scanner scanInput = new Scanner(System.in);
+        this.firstValue = getFloat(scanInput);
+        this.secondValue = getFloat(scanInput);
+        this.operation = getOperation(scanInput);
+        scanInput.close();
+    }
+
     public double getFirstValue() {
         return firstValue;
     }
@@ -31,15 +39,12 @@ public class InputValues {
         return secondValue;
     }
 
-    private static double getFloat(double inputString) {
+    private static double getFloat(Scanner scanInput) {
         System.out.println("Введите число:");
-        double result = checkFloat("18.55");
-        return result;
+        return checkFloat(scanInput.nextLine());
     }
 
     private static double checkFloat(String inputString) {
-        inputString = inputString;
-
         if (Pattern.compile("^([+-]?\\d+[.,]?\\d*)$").matcher(inputString).matches()) {
             if (inputString.contains(",")) {
                 inputString = inputString.replace(",", ".");

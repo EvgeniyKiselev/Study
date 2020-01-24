@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class CalcOOP {
 
     public static void main(String[] args) {
-        InputValues inputValues = new InputValues("18.55","9",'+');
+        InputValues inputValues = new InputValues();
         try {
             switch (inputValues.getOperation()) {
                 case '+':
