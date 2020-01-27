@@ -1,11 +1,12 @@
 <application>
   <component name="FileTypeManager" version="17">
     <extensionMap>
+      <mapping pattern="AllureReporter" type="CLASS" />
       <mapping pattern="fileToScan" type="PLAIN_TEXT" />
-      <mapping pattern="testCase1" type="PLAIN_TEXT" />
-      <mapping pattern="textToCollectioin" type="PLAIN_TEXT" />
-      <mapping pattern="textToWrite" type="PLAIN_TEXT" />
       <mapping pattern="git" type="PLAIN_TEXT" />
+      <mapping pattern="testCase1" type="PLAIN_TEXT" />
+      <mapping pattern="textToWrite" type="PLAIN_TEXT" />
+      <mapping pattern="textToCollectioin" type="PLAIN_TEXT" />
       <removed_mapping ext="bat" approved="true" type="PLAIN_TEXT" />
       <removed_mapping ext="log" approved="true" type="PLAIN_TEXT" />
       <removed_mapping ext="cmd" approved="true" type="PLAIN_TEXT" />
